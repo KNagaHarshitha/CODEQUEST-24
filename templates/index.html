@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Student Counseling System</title>
+    <link rel="stylesheet"  href="static/index.css">
+</head>
+<body>
+    <h1>Intelligent Student Counseling System</h1>
+    <form method="POST" action="{{ url_for('scatter_plot_view') }}">
+        <h3>Enter data for students:</h3>
+        <!-- Input for Attendance -->
+        <label for="attendance">Attendance (%):</label>
+        <input type="text" name="attendance" id="attendance" placeholder="Enter comma-separated values (e.g., 80,75,90)">
+        <br>
+        <!-- Input for Understanding -->
+        <label for="understanding">Understanding Level (1-5):</label>
+        <input type="text" name="understanding" id="understanding" placeholder="Enter comma-separated values (e.g., 4,3,5)">
+        <br>
+        <!-- Input for Engagement -->
+        <label for="engagement">Engagement Level (1-5):</label>
+        <input type="text" name="engagement" id="engagement" placeholder="Enter comma-separated values (e.g., 3,4,2)">
+        <br>
+        <!-- Input for Learning Environment Quality -->
+        <label for="learning_env">Learning Environment Quality (1-5):</label>
+        <input type="text" name="learning_env" id="learning_env" placeholder="Enter comma-separated values (e.g., 2,3,4)">
+        <br>
+        <!-- Input for Peer Influence -->
+        <label for="peer_influence">Peer Influence (1-5):</label>
+        <input type="text" name="peer_influence" id="peer_influence" placeholder="Enter comma-separated values (e.g., 3,2,4)">
+        <br>
+        <button type="submit">Generate Scatter Plot</button>
+    </form>
+    
+    <!-- Render the image below if it exists -->
+    {% if graph_url %}
+        <h3>Generated Scatter Plot:</h3>
+        <img src="{{ graph_url }}" alt="Generated Scatter Plot">
+    {% endif %}
+
+    <button>Submit</button>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Data</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Filtered Data</h1>
+
+    <!-- Display the filtered data from the form -->
+    <ul>
+        {% for key, value in data.items() %}
+        <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{{ url_for('index') }}">Go back to Home</a>
+</body>
+</html>

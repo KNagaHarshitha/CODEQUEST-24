@@ -1,0 +1,52 @@
+/* Table styling for correlation matrix */
+table.correlation-matrix {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header row */
+table.correlation-matrix th {
+    background-color: #1d4e89;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Table data */
+table.correlation-matrix td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Highlighting diagonal values */
+.correlation-matrix td:nth-child(n+2):nth-child(-n+7) {
+    background-color: #e6f7ff; /* Light blue for diagonal values */
+}
+
+/* Row and column styling */
+.correlation-matrix td:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Add some padding to the table */
+.correlation-matrix {
+    padding: 10px;
+}
+
+/* Responsive table for smaller screens */
+@media screen and (max-width: 600px) {
+    table.correlation-matrix {
+        width: 100%;
+        font-size: 12px;
+    }
+}
